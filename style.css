@@ -1,0 +1,155 @@
+:root{
+    --light-color: #F8F8FF;
+    --light-color-hover: #d0d0d0;
+    --dark-color: #202020;
+    --red-logo: #800000;
+    --red-dark-transparent: rgba(128, 0, 0, 0.65);
+    --red-dark: #610000;
+    --border-color: rgba(255, 255, 255, 0.25);
+    font-size: 16px;
+    letter-spacing: .04rem;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body > header > div > a{
+    color: currentColor;
+}
+
+body > header > div > a:hover{
+    color: var(--light-color-hover);
+    transform: scale(1.02);
+}
+
+.header-nav > div > a{
+    color: currentColor;
+}
+
+.header-nav > div > a:hover{
+    color: var(--light-color-hover);
+    transform: scale(1.12);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background: url('imagens/ANBDBQM.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.header-nav {
+    background-color: var(--red-dark);
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.header-nav > .nav-section {
+    padding: .3rem .2rem;
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+header > #logo-section {
+    display: flex;
+    height: 8rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-section, #social-section, #links-section {
+    flex-grow: 1;
+}
+
+svg {
+    fill: currentColor;
+    display: block;
+    stroke: black;
+    stroke-width: .625rem;
+    stroke-opacity: 20%;
+}
+
+.laboria-logo {
+    width: 7.7rem;
+}
+
+.social-logo, .link-logo {
+    width: 2.6rem;
+}
+
+.help-logo {
+    stroke-width: .125rem;
+}
+
+.side-nav-bar {
+    position: fixed;
+    right: 1.25rem;
+    top: 48%;
+    transform: translateY(-50%, -50%);
+}
+
+.side-nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar-item{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: .625rem;
+    margin: .3125rem 0;
+    background-color: var(--red-logo);
+    border-radius: .3125rem;
+    transition: background-color 0.3s;
+    transform: translateY(.625rem);
+}
+
+.side-bar-item:hover{
+    background-color: var(--red-dark);
+}
+
+.side-bar-item.active{
+    background-color: var(--red-dark);
+}
+
+.container {
+    flex-grow: 1;
+    position: relative;
+    scroll-snap-type: y mandatory;
+}
+
+.container > .section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    height: calc(100vh - 179.2px);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translateY(-100%);
+}
+
+.container > .section[data-status="active"]{
+    transform: translateY(0);
+}
