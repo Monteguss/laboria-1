@@ -4,6 +4,9 @@ Source code site Laboria
 - [x] Navbar com links
 - [x] SVGs
 - [x] Múltiplas seções
-- [x] Navegação com scroll
-- [ ] Barra de navegação lateral
-- [ ] Limitar scroll
+- [x] Barra de navegação lateral funcional
+- [ ] Navegação por scroll funcional
+- [ ] Animação para troca de seções
+- [ ] Footer com:
+  - [ ] Contato de negócios
+  - [ ] Copyright disclaimer
