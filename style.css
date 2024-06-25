@@ -1,4 +1,4 @@
-:root{
+:root {
     --light-color: #F8F8FF;
     --light-color-hover: #d0d0d0;
     --dark-color: #202020;
@@ -24,20 +24,20 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-body > header > div > a{
+body > header > div > a {
     color: currentColor;
 }
 
-body > header > div > a:hover{
+body > header > div > a:hover {
     color: var(--light-color-hover);
     transform: scale(1.02);
 }
 
-.header-nav > div > a{
+.header-nav > div > a {
     color: currentColor;
 }
 
-.header-nav > div > a:hover{
+.header-nav > div > a:hover {
     color: var(--light-color-hover);
     transform: scale(1.12);
 }
@@ -103,6 +103,7 @@ svg {
     right: 1.25rem;
     top: 48%;
     transform: translateY(-50%, -50%);
+    z-index: 10;
 }
 
 .side-nav-bar ul {
@@ -111,7 +112,7 @@ svg {
     margin: 0;
 }
 
-.side-bar-item{
+.side-bar-item {
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -123,11 +124,11 @@ svg {
     transform: translateY(.625rem);
 }
 
-.side-bar-item:hover{
+.side-bar-item:hover {
     background-color: var(--red-dark);
 }
 
-.side-bar-item.active{
+.side-bar-item[data-status="active"] {
     background-color: var(--red-dark);
 }
 
@@ -135,6 +136,7 @@ svg {
     flex-grow: 1;
     position: relative;
     scroll-snap-type: y mandatory;
+    z-index: 1;
 }
 
 .container > .section {
@@ -150,6 +152,7 @@ svg {
     transform: translateY(-100%);
 }
 
-.container > .section[data-status="active"]{
+.container > .section[data-status="active"] {
     transform: translateY(0);
+    z-index: 1;
 }
