@@ -43,6 +43,7 @@ body > header > div > a:hover {
 }
 
 header {
+    z-index: 10;
     display: flex;
     flex-direction: column;
     background: url('imagens/ANBDBQM.png');
@@ -149,10 +150,13 @@ svg {
     position: absolute;
     left: 0px;
     top: 0px;
+    z-index: 1;
+}
+
+.container > .section[data-status="inactive-top"] {
     transform: translateY(-100%);
 }
 
-.container > .section[data-status="active"] {
-    transform: translateY(0);
-    z-index: 1;
+.container > .section[data-status="inactive-bottom"] {
+    transform: translateY(100%);
 }
