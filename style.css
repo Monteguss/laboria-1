@@ -6,6 +6,7 @@
     --red-dark-transparent: rgba(128, 0, 0, 0.65);
     --red-dark: #610000;
     --border-color: rgba(255, 255, 255, 0.25);
+    --transition-duration: 0.44s;
     font-size: 16px;
     letter-spacing: .04rem;
 }
@@ -101,16 +102,18 @@ svg {
 
 .side-nav-bar {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     right: 1.25rem;
     top: 48%;
-    transform: translateY(-50%, -50%);
     z-index: 10;
 }
 
-.side-nav-bar ul {
+.side-bar-body {
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .side-bar-item {
@@ -122,7 +125,6 @@ svg {
     background-color: var(--red-logo);
     border-radius: .3125rem;
     transition: background-color 0.3s;
-    transform: translateY(.625rem);
 }
 
 .side-bar-item:hover {
@@ -133,30 +135,58 @@ svg {
     background-color: var(--red-dark);
 }
 
-.container {
+.main-container {
+    display: flex;
     flex-grow: 1;
     position: relative;
-    scroll-snap-type: y mandatory;
     z-index: 1;
 }
 
-.container > .section {
+.main-section {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
     height: calc(100vh - 179.2px);
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: 1;
+    transition: transform var(--transition-duration) ease-in-out;
 }
 
-.container > .section[data-status="inactive-top"] {
+.main-section[data-status="inactive-top"] {
     transform: translateY(-100%);
 }
 
-.container > .section[data-status="inactive-bottom"] {
+.main-section[data-status="inactive-bottom"] {
     transform: translateY(100%);
+}
+
+.main-section[data-status="active"] {
+    transform: translateY(0);
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    bottom: 0px;
+    font-size: .7rem;
+    padding: .75rem;
+    z-index: 5;
+    background-color: var(--dark-color);
+}
+
+.DMCA-Papers-Please, .DMCA-Mojang {
+    flex-basis: calc(100%/2);
+}
+
+.DMCA-Papers-Please {
+    text-align: left;
+}
+
+.DMCA-Mojang {
+    text-align: right;
 }
